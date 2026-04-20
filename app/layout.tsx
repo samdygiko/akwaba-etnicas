@@ -51,7 +51,7 @@ const jsonLd = {
     addressRegion: "Alicante",
     addressCountry: "ES",
   },
-  telephone: "+22507001563 60",
+  telephone: "+2250704854478",
   email: "akwabaakwabaethniques@gmail.com",
   url: "https://www.akwabaetnicas.com",
   sameAs: ["https://www.facebook.com/profile.php?id=100083202807448"],

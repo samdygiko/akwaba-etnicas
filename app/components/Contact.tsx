@@ -140,7 +140,7 @@ export default function Contact() {
             <div>
               <span style={labelStyle}>Phone</span>
               <a
-                href="tel:+22507001563 60"
+                href="tel:+2250704854478"
                 style={{
                   fontFamily: "var(--font-archivo), sans-serif",
                   fontSize: "0.9375rem",
@@ -148,7 +148,7 @@ export default function Contact() {
                   textDecoration: "none",
                 }}
               >
-                +225 07 00 15 63 60
+                +225 07 04 85 44 78
               </a>
             </div>
 

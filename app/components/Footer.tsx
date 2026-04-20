@@ -113,7 +113,7 @@ export default function Footer() {
             }}
           >
             <a
-              href="tel:+22507001563 60"
+              href="tel:+2250704854478"
               style={{
                 fontFamily: "var(--font-archivo), sans-serif",
                 fontSize: "0.9rem",
@@ -121,7 +121,7 @@ export default function Footer() {
                 textDecoration: "none",
               }}
             >
-              +225 07 00 15 63 60
+              +225 07 04 85 44 78
             </a>
             <a
               href="mailto:akwabaakwabaethniques@gmail.com"
