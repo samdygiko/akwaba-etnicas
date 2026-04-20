@@ -1,4 +1,18 @@
+"use client";
+
+import { useState } from "react";
+import { aboutTranslations, type Lang } from "@/app/lib/translations";
+
+const LANGS: { code: Lang; label: string }[] = [
+  { code: "en", label: "EN" },
+  { code: "fr", label: "FR" },
+  { code: "es", label: "ES" },
+];
+
 export default function About() {
+  const [lang, setLang] = useState<Lang>("en");
+  const t = aboutTranslations[lang];
+
   return (
     <section
       id="about"
@@ -26,19 +40,51 @@ export default function About() {
           }}
           className="about-left"
         >
-          <span
+          <div
             style={{
-              fontFamily: "var(--font-archivo), sans-serif",
-              fontSize: "0.7rem",
-              letterSpacing: "0.2em",
-              textTransform: "uppercase",
-              color: "var(--ochre)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
               marginBottom: "2rem",
-              display: "block",
             }}
           >
-            Our Story
-          </span>
+            <span
+              style={{
+                fontFamily: "var(--font-archivo), sans-serif",
+                fontSize: "0.7rem",
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                color: "var(--ochre)",
+              }}
+            >
+              {t.label}
+            </span>
+
+            {/* Language switcher */}
+            <div style={{ display: "flex", gap: "0.25rem" }}>
+              {LANGS.map(({ code, label }) => (
+                <button
+                  key={code}
+                  onClick={() => setLang(code)}
+                  style={{
+                    fontFamily: "var(--font-archivo), sans-serif",
+                    fontSize: "0.65rem",
+                    letterSpacing: "0.12em",
+                    fontWeight: lang === code ? 700 : 400,
+                    color: lang === code ? "var(--ochre)" : "rgba(235,224,203,0.35)",
+                    background: "transparent",
+                    border: "none",
+                    cursor: "pointer",
+                    padding: "0.25rem 0.4rem",
+                    textTransform: "uppercase",
+                    transition: "color 0.15s",
+                  }}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+          </div>
 
           <blockquote
             style={{
@@ -52,9 +98,7 @@ export default function About() {
               letterSpacing: "-0.01em",
             }}
           >
-            &ldquo;Akwaba&rdquo; — welcome, in the Akan
-            tradition. An invitation to enter a space
-            where African artistry meets everyday life.
+            {t.pullQuote}
           </blockquote>
         </div>
 
@@ -74,30 +118,11 @@ export default function About() {
               fontSize: "1.0625rem",
               lineHeight: 1.85,
               color: "var(--bone)",
-              margin: "0 0 1.75rem 0",
-              fontWeight: 400,
-            }}
-          >
-            Rooted in the rich textile and painting traditions of the African
-            continent, Akwaba Etnicas is a curated house of fashion and fine
-            art. From hand-dyed garments and woven handbags to original
-            paintings and the crown jewel of African womenswear — the headwrap
-            — every piece carries a story.
-          </p>
-
-          <p
-            style={{
-              fontFamily: "var(--font-archivo), sans-serif",
-              fontSize: "1.0625rem",
-              lineHeight: 1.85,
-              color: "var(--bone)",
               margin: "0 0 2.5rem 0",
               fontWeight: 400,
             }}
           >
-            Based in the heart of Abidjan, we bring the colour, craft and
-            spirit of Africa to anyone who believes that what you wear and
-            what you hang on your walls should mean something.
+            {t.body}
           </p>
 
           {/* Location detail */}
@@ -119,7 +144,7 @@ export default function About() {
                 color: "var(--ochre)",
               }}
             >
-              Find Us
+              {t.findUs}
             </span>
             <span
               style={{
@@ -139,17 +164,13 @@ export default function About() {
 
       <style>{`
         @media (max-width: 768px) {
-          .about-grid {
-            grid-template-columns: 1fr !important;
-          }
+          .about-grid { grid-template-columns: 1fr !important; }
           .about-left {
             border-right: none !important;
             border-bottom: 1px solid var(--clay) !important;
             padding: 3rem 1.5rem !important;
           }
-          .about-right {
-            padding: 3rem 1.5rem !important;
-          }
+          .about-right { padding: 3rem 1.5rem !important; }
         }
       `}</style>
     </section>
