@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Hero() {
   return (
     <>
@@ -67,7 +69,7 @@ export default function Hero() {
               fontWeight: 400,
             }}
           >
-            Paintings, garments, handbags and headwraps —
+            Paintings, garments, bags, fans and hats —
             each piece a story from the continent, worn and lived in.
           </p>
 
@@ -110,7 +112,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right — Placeholder images */}
+        {/* Right — Real product photos */}
         <div
           style={{
             display: "grid",
@@ -122,76 +124,44 @@ export default function Hero() {
           }}
           className="hero-right"
         >
-          {/* Main hero image — spans both rows in first col */}
+          {/* Main hero image */}
           <div
             style={{
               gridRow: "1 / 3",
-              background: "var(--cocoa)",
-              overflow: "hidden",
               position: "relative",
+              overflow: "hidden",
             }}
-            className="placeholder-img"
           >
-            <div
-              style={{
-                position: "absolute",
-                inset: 0,
-                display: "flex",
-                alignItems: "flex-end",
-                padding: "1.5rem",
-              }}
-            >
-              <span
-                style={{
-                  fontFamily: "var(--font-italiana), serif",
-                  fontSize: "1rem",
-                  color: "rgba(250,244,230,0.5)",
-                  letterSpacing: "0.06em",
-                }}
-              >
-                New Collection
-              </span>
-            </div>
+            <Image
+              src="/images/outfit-1.jpg"
+              alt="Akwaba Etnicas — African garment"
+              fill
+              style={{ objectFit: "cover", objectPosition: "center top" }}
+              priority
+              sizes="(max-width: 768px) 0px, 30vw"
+            />
           </div>
 
           {/* Top right */}
-          <div
-            style={{
-              background: "var(--clay)",
-              overflow: "hidden",
-            }}
-            className="placeholder-img"
-          />
+          <div style={{ position: "relative", overflow: "hidden" }}>
+            <Image
+              src="/images/bag-1.jpg"
+              alt="African handbag"
+              fill
+              style={{ objectFit: "cover" }}
+              sizes="(max-width: 768px) 0px, 20vw"
+            />
+          </div>
 
           {/* Bottom right */}
-          <div
-            style={{
-              background: "var(--ochre)",
-              overflow: "hidden",
-              position: "relative",
-            }}
-            className="placeholder-img"
-          >
-            <div
-              style={{
-                position: "absolute",
-                inset: 0,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <span
-                style={{
-                  fontFamily: "var(--font-italiana), serif",
-                  fontSize: "0.875rem",
-                  color: "rgba(42,26,15,0.45)",
-                  letterSpacing: "0.06em",
-                }}
-              >
-                Headwraps
-              </span>
-            </div>
+          <div style={{ position: "relative", overflow: "hidden" }}>
+            <Image
+              src="/images/hat-1.jpg"
+              alt="African hat"
+              fill
+              style={{ objectFit: "cover" }}
+              sizes="(max-width: 768px) 0px, 20vw"
+            />
           </div>
         </div>
       </section>
@@ -216,13 +186,13 @@ export default function Hero() {
                   letterSpacing: "0.22em",
                   textTransform: "uppercase",
                   color: "var(--bone)",
-                  marginRight: "0",
                 }}
               >
                 Paintings&nbsp;&nbsp;·&nbsp;&nbsp;
                 Garments&nbsp;&nbsp;·&nbsp;&nbsp;
-                Handbags&nbsp;&nbsp;·&nbsp;&nbsp;
-                Headwraps&nbsp;&nbsp;·&nbsp;&nbsp;
+                Bags&nbsp;&nbsp;·&nbsp;&nbsp;
+                Fans&nbsp;&nbsp;·&nbsp;&nbsp;
+                Hats&nbsp;&nbsp;·&nbsp;&nbsp;
                 Altea, Spain&nbsp;&nbsp;·&nbsp;&nbsp;
                 African Art House&nbsp;&nbsp;·&nbsp;&nbsp;
               </span>
@@ -233,16 +203,9 @@ export default function Hero() {
 
       <style>{`
         @media (max-width: 768px) {
-          .hero-grid {
-            grid-template-columns: 1fr !important;
-          }
-          .hero-right {
-            display: none !important;
-          }
-          .hero-left {
-            border-right: none !important;
-            padding: 3.5rem 1.5rem !important;
-          }
+          .hero-grid { grid-template-columns: 1fr !important; }
+          .hero-right { display: none !important; }
+          .hero-left { border-right: none !important; padding: 3.5rem 1.5rem !important; }
         }
       `}</style>
     </>

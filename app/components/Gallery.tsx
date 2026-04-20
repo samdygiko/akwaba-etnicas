@@ -1,15 +1,26 @@
-// Placeholder gallery cells — replace backgrounds with real <Image> components
-// when product photography is supplied.
+import Image from "next/image";
+
+// All 19 product photos distributed across the gallery grid
+// Layout: 3-column grid, some items span 2 columns for visual rhythm
 const GALLERY_ITEMS = [
-  { id: 1, bg: "var(--clay)", span: "span 2", label: "Ankara Garment" },
-  { id: 2, bg: "var(--ochre)", span: "span 1", label: "Original Painting" },
-  { id: 3, bg: "var(--cocoa)", span: "span 1", label: "Woven Handbag" },
-  { id: 4, bg: "var(--rust)", span: "span 1", label: "Headwrap" },
-  { id: 5, bg: "#6b3d2e", span: "span 2", label: "Mudcloth Garment" },
-  { id: 6, bg: "var(--sun)", span: "span 1", label: "Statement Bag" },
-  { id: 7, bg: "#3d2010", span: "span 1", label: "Acrylic on Canvas" },
-  { id: 8, bg: "var(--clay)", span: "span 1", label: "Kente Wrap" },
-  { id: 9, bg: "var(--cocoa)", span: "span 2", label: "Mixed Media" },
+  { src: "/images/outfit-1.jpg",   alt: "African outfit",        label: "Garments",  span: 1 },
+  { src: "/images/bag-2.jpg",      alt: "African handbag",       label: "Bags",      span: 1 },
+  { src: "/images/painting-1.jpg", alt: "African painting",      label: "Paintings", span: 1 },
+  { src: "/images/hat-2.jpg",      alt: "African hat",           label: "Hats",      span: 1 },
+  { src: "/images/outfit-2.jpg",   alt: "African outfit",        label: "Garments",  span: 2 },
+  { src: "/images/fan-1.jpg",      alt: "African hand fan",      label: "Fans",      span: 1 },
+  { src: "/images/bag-3.jpg",      alt: "African tote bag",      label: "Bags",      span: 1 },
+  { src: "/images/painting-2.jpg", alt: "African painting",      label: "Paintings", span: 1 },
+  { src: "/images/hat-3.jpg",      alt: "African hat",           label: "Hats",      span: 2 },
+  { src: "/images/bag-4.jpg",      alt: "African bag",           label: "Bags",      span: 1 },
+  { src: "/images/outfit-3.jpg",   alt: "African garment",       label: "Garments",  span: 1 },
+  { src: "/images/fan-2.jpg",      alt: "African hand fan",      label: "Fans",      span: 1 },
+  { src: "/images/painting-3.jpg", alt: "African painting",      label: "Paintings", span: 1 },
+  { src: "/images/hat-4.jpg",      alt: "African hat",           label: "Hats",      span: 1 },
+  { src: "/images/painting-4.jpg", alt: "African painting",      label: "Paintings", span: 1 },
+  { src: "/images/hat-5.jpg",      alt: "African hat",           label: "Hats",      span: 1 },
+  { src: "/images/bag-1.jpg",      alt: "African handbag",       label: "Bags",      span: 2 },
+  { src: "/images/hat-6.jpg",      alt: "African hat",           label: "Hats",      span: 1 },
 ];
 
 export default function Gallery() {
@@ -26,85 +37,94 @@ export default function Gallery() {
         style={{
           padding: "4.5rem 2.5rem 3rem",
           borderBottom: "1px solid var(--bone)",
+          display: "flex",
+          alignItems: "flex-end",
+          justifyContent: "space-between",
+          flexWrap: "wrap",
+          gap: "1rem",
         }}
       >
+        <div>
+          <span
+            style={{
+              fontFamily: "var(--font-archivo), sans-serif",
+              fontSize: "0.7rem",
+              letterSpacing: "0.2em",
+              textTransform: "uppercase",
+              color: "var(--clay)",
+              display: "block",
+              marginBottom: "0.75rem",
+            }}
+          >
+            Selected Works
+          </span>
+          <h2
+            style={{
+              fontFamily: "var(--font-fraunces), serif",
+              fontStyle: "italic",
+              fontWeight: 300,
+              fontSize: "clamp(2rem, 4vw, 3.5rem)",
+              lineHeight: 1,
+              color: "var(--ink)",
+              letterSpacing: "-0.01em",
+              margin: 0,
+            }}
+          >
+            Each piece, a continent.
+          </h2>
+        </div>
         <span
           style={{
             fontFamily: "var(--font-archivo), sans-serif",
-            fontSize: "0.7rem",
-            letterSpacing: "0.2em",
+            fontSize: "0.75rem",
+            letterSpacing: "0.12em",
             textTransform: "uppercase",
             color: "var(--clay)",
-            display: "block",
-            marginBottom: "0.75rem",
+            fontWeight: 500,
           }}
         >
-          Selected Works
+          19 works
         </span>
-        <h2
-          style={{
-            fontFamily: "var(--font-fraunces), serif",
-            fontStyle: "italic",
-            fontWeight: 300,
-            fontSize: "clamp(2rem, 4vw, 3.5rem)",
-            lineHeight: 1,
-            color: "var(--ink)",
-            letterSpacing: "-0.01em",
-            margin: 0,
-          }}
-        >
-          Each piece, a continent.
-        </h2>
       </div>
 
-      {/* Irregular grid */}
+      {/* Gallery grid */}
       <div
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(3, 1fr)",
-          gridAutoRows: "260px",
+          gridAutoRows: "320px",
           gap: "1px",
           background: "var(--bone)",
         }}
         className="gallery-grid"
       >
-        {GALLERY_ITEMS.map((item) => (
+        {GALLERY_ITEMS.map((item, i) => (
           <div
-            key={item.id}
+            key={i}
             className="gallery-item"
             style={{
-              gridColumn: item.span,
-              overflow: "hidden",
+              gridColumn: `span ${item.span}`,
               position: "relative",
+              overflow: "hidden",
             }}
           >
-            <div
-              className="placeholder-img"
-              style={{
-                position: "absolute",
-                inset: 0,
-                background: item.bg,
-              }}
+            <Image
+              src={item.src}
+              alt={item.alt}
+              fill
+              style={{ objectFit: "cover" }}
+              sizes={item.span === 2
+                ? "(max-width: 768px) 100vw, 66vw"
+                : "(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
+              }
             />
             {/* Hover label */}
-            <div
-              style={{
-                position: "absolute",
-                inset: 0,
-                display: "flex",
-                alignItems: "flex-end",
-                padding: "1.25rem",
-                background: "linear-gradient(to top, rgba(42,26,15,0.55) 0%, transparent 50%)",
-                opacity: 0,
-                transition: "opacity 0.3s ease",
-              }}
-              className="gallery-label"
-            >
+            <div className="gallery-label">
               <span
                 style={{
                   fontFamily: "var(--font-archivo), sans-serif",
-                  fontSize: "0.75rem",
-                  letterSpacing: "0.14em",
+                  fontSize: "0.7rem",
+                  letterSpacing: "0.16em",
                   textTransform: "uppercase",
                   color: "var(--cream)",
                   fontWeight: 500,
@@ -118,23 +138,30 @@ export default function Gallery() {
       </div>
 
       <style>{`
-        .gallery-item:hover .gallery-label {
-          opacity: 1;
+        .gallery-label {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          align-items: flex-end;
+          padding: 1.25rem;
+          background: linear-gradient(to top, rgba(42,26,15,0.6) 0%, transparent 45%);
+          opacity: 0;
+          transition: opacity 0.3s ease;
         }
+        .gallery-item:hover .gallery-label { opacity: 1; }
         @media (max-width: 768px) {
           .gallery-grid {
             grid-template-columns: repeat(2, 1fr) !important;
-            grid-auto-rows: 200px !important;
+            grid-auto-rows: 220px !important;
           }
+          .gallery-item[style*="span 2"] { grid-column: span 2 !important; }
         }
         @media (max-width: 480px) {
           .gallery-grid {
             grid-template-columns: 1fr !important;
-            grid-auto-rows: 240px !important;
+            grid-auto-rows: 260px !important;
           }
-          .gallery-item {
-            grid-column: span 1 !important;
-          }
+          .gallery-item { grid-column: span 1 !important; }
         }
       `}</style>
     </section>
