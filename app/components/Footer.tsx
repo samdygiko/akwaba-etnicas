@@ -42,7 +42,7 @@ export default function Footer() {
             }}
           >
             African fashion &amp; art house. Paintings, garments,
-            handbags and headwraps. Based in Altea, Alicante, Spain.
+            bags, fans and hats. Based in Abidjan, Côte d&apos;Ivoire.
           </p>
         </div>
 

@@ -95,9 +95,9 @@ export default function About() {
               fontWeight: 400,
             }}
           >
-            Based in Altea on the Costa Blanca, we bring the colour, craft and
-            spirit of Africa to Spain — and to anyone who believes that what
-            you wear and what you hang on your walls should mean something.
+            Based in the heart of Abidjan, we bring the colour, craft and
+            spirit of Africa to anyone who believes that what you wear and
+            what you hang on your walls should mean something.
           </p>
 
           {/* Location detail */}
@@ -129,9 +129,9 @@ export default function About() {
                 lineHeight: 1.6,
               }}
             >
-              C/Tirant lo Blanc, 6 Loc. 2-3 27A
+              8233+95J Marché Belleville (Treichville)
               <br />
-              03590 Altea, Alicante, Spain
+              Abidjan, Côte d&apos;Ivoire
             </span>
           </div>
         </div>

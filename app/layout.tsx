@@ -23,13 +23,13 @@ const archivo = Archivo({
 });
 
 export const metadata: Metadata = {
-  title: "Akwaba Etnicas | African Fashion & Art House — Altea, Spain",
+  title: "Akwaba Etnicas | African Fashion & Art House — Abidjan, Côte d'Ivoire",
   description:
-    "African fashion and art house in Altea, Alicante. Original paintings, handcrafted garments, statement handbags and headwraps from the African continent.",
+    "African fashion and art house in Abidjan, Côte d'Ivoire. Original paintings, handcrafted garments, bags, fans and hats from the African continent.",
   openGraph: {
     title: "Akwaba Etnicas",
     description:
-      "African fashion and art house in Altea, Spain. Paintings, garments, handbags & headwraps.",
+      "African fashion and art house in Abidjan, Côte d'Ivoire. Paintings, garments, bags, fans & hats.",
     url: "https://www.akwabaetnicas.com",
     siteName: "Akwaba Etnicas",
     locale: "en_US",
@@ -45,11 +45,9 @@ const jsonLd = {
     "African fashion and art house. Paintings, garments, handbags and headwraps.",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "C/Tirant lo Blanc, 6 Loc. 2-3 27A",
-    addressLocality: "Altea",
-    postalCode: "03590",
-    addressRegion: "Alicante",
-    addressCountry: "ES",
+    streetAddress: "8233+95J Marché Belleville, Treichville",
+    addressLocality: "Abidjan",
+    addressCountry: "CI",
   },
   telephone: "+2250704854478",
   email: "akwabaakwabaethniques@gmail.com",

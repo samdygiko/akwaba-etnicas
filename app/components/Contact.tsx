@@ -130,9 +130,9 @@ export default function Contact() {
                   fontStyle: "normal",
                 }}
               >
-                C/Tirant lo Blanc, 6 Loc. 2-3 27A
+                8233+95J Marché Belleville (Treichville)
                 <br />
-                03590 Altea, Alicante, Spain
+                Abidjan, Côte d&apos;Ivoire
               </address>
             </div>
 

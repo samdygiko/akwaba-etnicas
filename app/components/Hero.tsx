@@ -36,7 +36,7 @@ export default function Hero() {
               display: "block",
             }}
           >
-            African Fashion &amp; Art House — Altea, Spain
+            African Fashion &amp; Art House — Abidjan, Côte d&apos;Ivoire
           </span>
 
           <h1
@@ -193,7 +193,7 @@ export default function Hero() {
                 Bags&nbsp;&nbsp;·&nbsp;&nbsp;
                 Fans&nbsp;&nbsp;·&nbsp;&nbsp;
                 Hats&nbsp;&nbsp;·&nbsp;&nbsp;
-                Altea, Spain&nbsp;&nbsp;·&nbsp;&nbsp;
+                Abidjan, Côte d&apos;Ivoire&nbsp;&nbsp;·&nbsp;&nbsp;
                 African Art House&nbsp;&nbsp;·&nbsp;&nbsp;
               </span>
             ))}
